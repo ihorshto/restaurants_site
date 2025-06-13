@@ -1,0 +1,62 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Gradient Definitions -->
+    <defs>
+        <linearGradient id="plateGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#FF8E8E;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="locationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#4ECDC4;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#44B3AC;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="knifeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FFE66D;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#FFC93C;stop-opacity:1" />
+        </linearGradient>
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="rgba(0,0,0,0.1)"/>
+        </filter>
+    </defs>
+
+    <!-- Background Circle -->
+    <circle cx="100" cy="100" r="90" fill="white" filter="url(#shadow)" stroke="#f0f0f0" stroke-width="2"/>
+
+    <!-- Location Pin Base -->
+    <path d="M100 40 C85 40 73 52 73 67 C73 85 100 120 100 120 C100 120 127 85 127 67 C127 52 115 40 100 40Z"
+          fill="url(#locationGradient)" filter="url(#shadow)"/>
+
+    <!-- Location Pin Center Dot -->
+    <circle cx="100" cy="67" r="8" fill="white"/>
+
+    <!-- Plate (circular base) -->
+    <ellipse cx="100" cy="140" rx="45" ry="40" fill="url(#plateGradient)" filter="url(#shadow)"/>
+    <ellipse cx="100" cy="137" rx="35" ry="30" fill="white" opacity="0.9"/>
+    <ellipse cx="100" cy="137" rx="25" ry="20" fill="url(#plateGradient)" opacity="0.3"/>
+
+    <!-- Fork (left side) -->
+    <g transform="translate(60, 120)">
+        <!-- Fork handle -->
+        <rect x="0" y="15" width="4" height="25" rx="2" fill="#666"/>
+        <!-- Fork prongs -->
+        <rect x="-1" y="12" width="2" height="8" rx="1" fill="#666"/>
+        <rect x="1.5" y="12" width="2" height="8" rx="1" fill="#666"/>
+        <rect x="4" y="12" width="2" height="8" rx="1" fill="#666"/>
+    </g>
+
+    <!-- Knife (right side) -->
+    <g transform="translate(135, 120)">
+        <!-- Knife handle -->
+        <rect x="0" y="15" width="4" height="25" rx="2" fill="url(#knifeGradient)"/>
+        <!-- Knife blade -->
+        <path d="M0 15 L2 8 L4 15 Z" fill="#C0C0C0"/>
+    </g>
+
+    <!-- Decorative dots for modern touch -->
+    <circle cx="85" cy="95" r="2" fill="#4ECDC4" opacity="0.6"/>
+    <circle cx="115" cy="95" r="2" fill="#FF6B6B" opacity="0.6"/>
+    <circle cx="100" cy="165" r="2" fill="#FFE66D" opacity="0.6"/>
+
+    <!-- Modern accent lines -->
+    <path d="M70 85 Q100 75 130 85" stroke="#4ECDC4" stroke-width="2" fill="none" opacity="0.4"/>
+    <path d="M75 155 Q100 165 125 155" stroke="#FF6B6B" stroke-width="2" fill="none" opacity="0.4"/>
+</svg>

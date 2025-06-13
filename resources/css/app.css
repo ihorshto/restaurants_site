@@ -1,0 +1,92 @@
+@import 'tailwindcss';
+
+/* Preline UI */
+@import "../../node_modules/preline/variants.css";
+@source "../../node_modules/preline/dist/*.js";
+
+@plugin '@tailwindcss/forms';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+  --font-sans:
+    Figtree, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+      border-color: var(--color-gray-200, currentcolor);
+    },
+
+    html {
+        font-size: 16px;
+        font-family: system-ui, sans-serif;
+        color: #000;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    button:not(:disabled),
+    [role="button"]:not(:disabled) {
+        cursor: pointer;
+    }
+
+    body {
+        margin: 0;
+        background-color: #fff;
+    }
+
+    h2, h3, h4, h5, h6 {
+        font-weight: 400;
+    }
+
+    h2 {
+        font-size: 32px;
+        line-height: 39px;
+    }
+
+    h3 {
+      font-size: 24px;
+        line-height: 29px;
+    }
+}
+
+.hs-select {
+    border: 0px solid oklch(92.8% 0.006 264.531);
+    border-radius: 8px;
+    margin: 0;
+}
+
+.button-default {
+    @apply max-h-[45px] h-full py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border disabled:opacity-50 disabled:pointer-events-none cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-blue-500;
+}
+
+.button-danger {
+    @apply max-h-[45px] h-full py-3 px-4 text-white bg-red-500 hover:bg-red-600 transition-all inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent focus:outline-none disabled:opacity-50 disabled:pointer-events-none cursor-pointer;
+}
+
+.button-success {
+    @apply max-h-[45px] h-full py-3 px-4 text-white bg-blue-500 hover:bg-blue-600 transition-all inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent focus:outline-none disabled:opacity-50 disabled:pointer-events-none cursor-pointer;
+}
+
+.button-cancel {
+    @apply max-h-[45px] h-full py-3 px-4 text-black bg-white hover:bg-gray-100 transition-all inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-gray-200 focus:outline-none disabled:opacity-50 disabled:pointer-events-none cursor-pointer;
+}
